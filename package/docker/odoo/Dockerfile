@@ -3,7 +3,8 @@ FROM odoo:16.0
 ENV ADDON_PATH=/opt/bahmni-erp/bahmni-addons
 
 USER root
-COPY package/docker/odoo/odoo.conf /etc/odoo/odoo.conf
+# COPY package/docker/odoo/odoo.conf /etc/odoo/odoo.conf
+COPY /odoo.conf /etc/odoo/odoo.conf
 RUN chown -R odoo:odoo /etc/odoo
 
 COPY bahmni_account ${ADDON_PATH}/bahmni_account/
